@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frontend application</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,  initial-scale=1, maximum-scale=0.8, user-scalable=0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script>
+        function toggle(checked) {
+            var el = document.getElementById("playlink"),
+                checkbox =   document.getElementById("checkbox"),
+                cancel =   document.getElementById("cancel");
+
+            if (checked.checked == true) {
+                el.classList.remove("disabled");
+                cancel.classList.remove("hide");
+                el.disabled = false;
+                checkbox.checked = true;
+
+            } else {
+                el.classList.add("disabled");
+                cancel.classList.add("hide");
+                el.disabled = true;
+                checkbox.checked = false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="page">
+    <header>
+        <div class="confines">
+            <div class="label"></div>
+            <span>12+</span>
+        </div>
+        <div class="logo">VIDEO <span>Tube</span></div>
+    </header>
+    <div class="content">
+        <div class="player" id="video-container">
+            <div class="video-title">
+                <span class="title">Видео HD</span>
+                <a href="" class="share time"></a>
+                <a href="" class="share"></a>
+            </div>
+            <div class="video-controll">
+                <button class="play" id="playlink">
+                    Смотреть
+                    <svg  id="play" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  viewBox="0 0 147.646 163.861" preserveAspectRatio="xMidYMid meet">
+                        <g>
+                            <path d="M26.75,3.612C11.977-4.861,0,2.081,0,19.105v125.637c0,17.042,11.977,23.975,26.75,15.509 l109.813-62.977c14.777-8.478,14.777-22.211,0-30.687L26.75,3.612z"/>
+                        </g>
+                    </svg>
+                </button>
+
+                <div class="video-info">
+                    Просмотров: 14204
+                </div>
+                <a href="javascript:void(0);" id="cancel" onclick="toggle(this)"  class="cancel">
+                Отмена
+                </a>
+            </div>
+            <div class="preview">
+                <img class="img-responsive" src="images/tele2_1_mult-2.jpg" alt="Видео HD" title="Видео HD" />
+            </div>
+            <!-- Video Controls -->
+            <div id="video-bar">
+                <div class="bar">
+                    <div class="range"> </div>
+                    <button id="playpausebtn"></button>
+                    <button id="mutebtn"></button>
+                    <span id="durtimetext">0:01 / 15:44</span>
+                    <button id="fullscreenbtn"></button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    <footer>
+        <input id="checkbox" type="checkbox" id="checkbox" onchange="toggle(this)" checked>
+        <label class="checkbox" for="checkbox">
+            <span class="label">
+                Подтверждаю, что люблю мультики, и
+                соглашаюсь с <a href="javascript:void(0);">правилами предоставления
+                услуги</a>
+           </span>
+        </label>
+        <p>Услуга: domainname.eu. Провайдер ООО “Эс Эм Экс
+        Комьюникейшнс”. Стоимость: 20 руб в сутки с НДС.</p>
+    </footer>
+</div>
+</body>
+</html>
